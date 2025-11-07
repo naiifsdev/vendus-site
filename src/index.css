@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Inter', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #111115;
+}
+
+body {
+  background-color: #111115;
+  color: #FFFFFF;
+}
+
+@layer utilities {
+  .font-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: -0.01em;
+    font-weight: 700;
+  }
+  
+  .gradient-animated {
+    background: linear-gradient(135deg, #FF6B00 0%, #FF3C00 100%);
+    background-size: 200% auto;
+    animation: gradient-shift 3s ease infinite;
+    filter: brightness(1.265) contrast(1.1);
+  }
+  
+  .gradient-secondary {
+    background: linear-gradient(135deg, #7B2FF7 0%, #A370FF 100%);
+    background-size: 200% auto;
+    animation: gradient-shift 3s ease infinite;
+    filter: brightness(1.1) contrast(1.1);
+  }
+  
+  @keyframes gradient-shift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+  
+  .glow-orange {
+    box-shadow: 0 0 40px -10px rgba(255, 107, 0, 0.4);
+  }
+  
+  .glow-orange-lg {
+    box-shadow: 0 0 60px -10px rgba(255, 107, 0, 0.5);
+  }
+  
+  .glow-purple {
+    box-shadow: 0 0 40px -10px rgba(123, 47, 247, 0.3);
+  }
+  
+  .glow-gradient {
+    box-shadow: 0 0 40px -10px rgba(255, 107, 0, 0.4), 0 0 40px -10px rgba(123, 47, 247, 0.2);
+  }
+  
+  .glow-hover {
+    box-shadow: 0 0 25px -8px rgba(255, 107, 0, 0.25);
+  }
+  
+  .glow-button {
+    box-shadow: 0 0 25px rgba(255, 107, 0, 0.3);
+  }
+  
+  .glow-button-hover {
+    box-shadow: 0 0 15px rgba(255, 107, 0, 0.25);
+  }
+  
+  .text-gradient {
+    background: linear-gradient(135deg, #FF6B00 0%, #7B2FF7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .icon-glow {
+    filter: drop-shadow(0 0 10px rgba(255, 107, 0, 0.3));
+  }
+}
