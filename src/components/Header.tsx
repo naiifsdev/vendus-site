@@ -2,10 +2,11 @@ import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 
 interface HeaderProps {
-  onOpenSignup: () => void;
+  onFreeTrial: () => void;
+  onCheckout: () => void;
 }
 
-export default function Header({ onOpenSignup }: HeaderProps) {
+export default function Header({ onFreeTrial, onCheckout }: HeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const scrollToSection = (id: string) => {
@@ -57,14 +58,14 @@ export default function Header({ onOpenSignup }: HeaderProps) {
               Entrar
             </a>
             <button
-              onClick={onOpenSignup}
+              onClick={onFreeTrial}
               className="group relative px-4 py-2 bg-gradient-to-r from-[#FF6B00] to-[#FF3C00] text-white font-semibold rounded-lg hover:brightness-125 hover:scale-[1.03] transition-all text-sm overflow-hidden glow-button"
             >
               <span className="relative z-10">Teste grátis 3 dias</span>
               <div className="absolute inset-0 bg-gradient-to-r from-[#FF6B00] via-[#FF7A1A] to-[#FF6B00] bg-[length:200%_auto] animate-gradient opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </button>
             <button
-              onClick={() => scrollToSection('planos')}
+              onClick={onCheckout}
               className="px-4 py-2 bg-transparent border border-[#FF6B00]/60 text-[#FF6B00] rounded-lg hover:bg-[#FF6B00]/10 hover:scale-[1.03] transition-all font-medium text-sm glow-button-hover"
             >
               Assinar R$45/mês
@@ -110,14 +111,14 @@ export default function Header({ onOpenSignup }: HeaderProps) {
               Entrar
             </a>
             <button
-              onClick={onOpenSignup}
+              onClick={onFreeTrial}
               className="block w-full px-4 py-2 bg-gradient-to-r from-[#FF6B00] to-[#FF3C00] text-white font-semibold rounded-lg hover:brightness-125 hover:scale-[1.03] transition-all text-center glow-button"
             >
               Teste grátis 3 dias
             </button>
             <button
               onClick={() => {
-                scrollToSection('planos');
+                onCheckout();
                 setIsMobileMenuOpen(false);
               }}
               className="block w-full px-4 py-2 bg-transparent border border-[#FF6B00]/60 text-[#FF6B00] rounded-lg hover:bg-[#FF6B00]/10 hover:scale-[1.03] transition-all font-medium text-center glow-button-hover"

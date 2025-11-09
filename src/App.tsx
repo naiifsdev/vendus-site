@@ -6,21 +6,32 @@ import Calculator from './components/Calculator';
 import Pricing from './components/Pricing';
 import Testimonials from './components/Testimonials';
 import Footer from './components/Footer';
-import SignupModal from './components/SignupModal';
+import ModalTrial from './components/ModalTrial';
+import ModalAssinar from './components/ModalAssinar';
 
 function App() {
-  const [isSignupModalOpen, setIsSignupModalOpen] = useState(false);
+  const [isTrialModalOpen, setIsTrialModalOpen] = useState(false);
+  const [isAssinarModalOpen, setIsAssinarModalOpen] = useState(false);
+
+  const handleFreeTrial = () => {
+    setIsTrialModalOpen(true);
+  };
+
+  const handleCheckout = () => {
+    setIsAssinarModalOpen(true);
+  };
 
   return (
     <div className="min-h-screen dark:bg-[#111115] light:bg-[#F9FAFB] transition-colors duration-300">
-      <Header onOpenSignup={() => setIsSignupModalOpen(true)} />
-      <Hero onOpenSignup={() => setIsSignupModalOpen(true)} />
+      <Header onFreeTrial={handleFreeTrial} onCheckout={handleCheckout} />
+      <Hero onFreeTrial={handleFreeTrial} />
       <Features />
       <Calculator />
-      <Pricing onOpenSignup={() => setIsSignupModalOpen(true)} />
+      <Pricing onFreeTrial={handleFreeTrial} onCheckout={handleCheckout} />
       <Testimonials />
       <Footer />
-      <SignupModal isOpen={isSignupModalOpen} onClose={() => setIsSignupModalOpen(false)} />
+      <ModalTrial isOpen={isTrialModalOpen} onClose={() => setIsTrialModalOpen(false)} />
+      <ModalAssinar isOpen={isAssinarModalOpen} onClose={() => setIsAssinarModalOpen(false)} />
     </div>
   );
 }

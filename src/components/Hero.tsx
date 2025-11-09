@@ -1,10 +1,10 @@
 import { ArrowRight, BarChart3, TrendingUp, Users } from 'lucide-react';
 
 interface HeroProps {
-  onOpenSignup: () => void;
+  onFreeTrial: () => void;
 }
 
-export default function Hero({ onOpenSignup }: HeroProps) {
+export default function Hero({ onFreeTrial }: HeroProps) {
   return (
     <section id="inicio" className="relative pt-32 pb-24 px-4 sm:px-6 lg:px-8 dark:bg-[#111115] light:bg-[#F9FAFB] overflow-hidden">
       {/* Grid texture background */}
@@ -41,7 +41,7 @@ export default function Hero({ onOpenSignup }: HeroProps) {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <button
-                onClick={onOpenSignup}
+                onClick={onFreeTrial}
                 className="group relative px-8 py-4 bg-gradient-to-r from-[#FF6B00] to-[#FF3C00] text-white rounded-xl font-semibold hover:brightness-125 hover:scale-[1.03] transition-all duration-300 flex items-center justify-center space-x-2 overflow-hidden glow-button"
               >
                 <span className="relative z-10">Teste grátis 3 dias</span>

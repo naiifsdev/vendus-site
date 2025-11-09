@@ -1,10 +1,11 @@
 import { Check, Zap } from 'lucide-react';
 
 interface PricingProps {
-  onOpenSignup: () => void;
+  onFreeTrial: () => void;
+  onCheckout: () => void;
 }
 
-export default function Pricing({ onOpenSignup }: PricingProps) {
+export default function Pricing({ onFreeTrial, onCheckout }: PricingProps) {
   const features = [
     'Acesso completo a todas as funções',
     'Integração com Shopee e Mercado Livre',
@@ -80,14 +81,14 @@ export default function Pricing({ onOpenSignup }: PricingProps) {
 
               <div className="space-y-3">
                 <button
-                  onClick={onOpenSignup}
+                  onClick={onCheckout}
                   className="group relative w-full px-8 py-4 bg-gradient-to-r from-[#FF6B00] to-[#FF3C00] text-white rounded-xl font-bold text-lg hover:brightness-125 hover:scale-[1.03] transition-all overflow-hidden glow-button"
                 >
                   <span className="relative z-10">Assinar agora</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-[#FF6B00] via-[#FF7A1A] to-[#FF6B00] bg-[length:200%_auto] animate-gradient opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 </button>
                 <button
-                  onClick={onOpenSignup}
+                  onClick={onFreeTrial}
                   className="group relative w-full px-8 py-4 bg-gradient-to-r from-[#7B2FF7] to-[#A370FF] text-white rounded-xl font-semibold hover:brightness-115 hover:scale-[1.02] transition-all overflow-hidden"
                   style={{ boxShadow: '0 0 20px rgba(123, 47, 247, 0.25)' }}
                 >
