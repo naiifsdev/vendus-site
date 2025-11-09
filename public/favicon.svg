@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">Vendus favicon</title>
+  <defs>
+    <linearGradient id="vendusGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF7A00" />
+      <stop offset="100%" stop-color="#FF1F00" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="64" fill="url(#vendusGradient)" />
+  <path
+    d="M140 120 L256 392 L372 120"
+    fill="none"
+    stroke="#FFFFFF"
+    stroke-width="96"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>
+
